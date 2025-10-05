@@ -1,0 +1,136 @@
+@baseUrl= https://localhost:8888
+
+###
+GET {{baseUrl}}/debug/api-descriptions
+
+###
+GET {{baseUrl}}/openapi/v1.json
+
+// ///////////////////////////////////////   AUTH
+
+###
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "Email":"k@gmail.com",
+    "Password":"Afjdskdjse8e#sdfj"
+}
+
+###
+POST {{baseUrl}}/api/v1/auth/refresh
+Content-Type: application/json
+
+{
+    "RefreshToken":"BFjXHZ0EOw42EUR3MSP9cB5tW38wtx2je/lr8/pzDirn1uC4HEk8bhA8FcHFuUCc88YhOBR7p505v1y4JjkXnQ==",
+    "AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjI5Mzc3LCJleHAiOjE3NTkyMzExNzcsImlhdCI6MTc1OTIyOTM3NywiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.TEpSwfjdIdhbIV-TrmooUKQSQi4k5Tb7Gda_M1VX_00"
+}
+
+###
+POST {{baseUrl}}/api/v1/auth/logout
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjI5Mzc3LCJleHAiOjE3NTkyMzExNzcsImlhdCI6MTc1OTIyOTM3NywiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.TEpSwfjdIdhbIV-TrmooUKQSQi4k5Tb7Gda_M1VX_00
+
+
+###
+GET {{baseUrl}}/api/v1/auth/me
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjI5Mzc3LCJleHAiOjE3NTkyMzExNzcsImlhdCI6MTc1OTIyOTM3NywiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.TEpSwfjdIdhbIV-TrmooUKQSQi4k5Tb7Gda_M1VX_00
+
+
+
+
+// ///////////////////////////////////////////    USERS
+
+###
+POST {{baseUrl}}/api/v1/users
+Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjM0MTUzLCJleHAiOjE3NTkyMzU5NTMsImlhdCI6MTc1OTIzNDE1MywiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.CdtgfgrqosqjsyUPhlgznBEWCsadqGcaMy4Wu545-bY
+
+
+{
+    "FName":"sobhi",
+    "LName": "hazoury",
+    "DateOfBirth": "2000-01-11",
+    "Email" :"sobh@gmail.com",
+    "Password":"Abcd1@Abcd",
+    "Role" : "admin",
+    "IsActive": true
+}
+###
+PUT {{baseUrl}}/api/v1/users/a5fc9a37-f31a-43b4-aad8-446880dbd6eb
+Content-Type: application/json
+Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjI3NTM5LCJleHAiOjE3NTkyMjkzMzksImlhdCI6MTc1OTIyNzUzOSwiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.1Ay2YzIbEWo2hyWWQb2c60RvZ2t4eD5Kaoi07TDXzQM
+
+{
+    "FName":"mmm",
+    "LName": "haz",
+     "DateOfBirth": "2000-01-11",
+    "Email" :"mmmm@gmail.com",
+    "Password":"fAjdskdjse8e#sdfj",
+    "Role" : "labor",
+    "IsActive": true
+}
+
+###
+DELETE {{baseUrl}}/api/v1/users/a5fc9a37-f31a-43b4-aad8-446880dbd6eb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjI5Mzc3LCJleHAiOjE3NTkyMzExNzcsImlhdCI6MTc1OTIyOTM3NywiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.TEpSwfjdIdhbIV-TrmooUKQSQi4k5Tb7Gda_M1VX_00
+
+###
+GET {{baseUrl}}/api/v1/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjI5Mzc3LCJleHAiOjE3NTkyMzExNzcsImlhdCI6MTc1OTIyOTM3NywiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.TEpSwfjdIdhbIV-TrmooUKQSQi4k5Tb7Gda_M1VX_00
+
+###
+GET {{baseUrl}}/api/v1/users/2CBB15FE-B854-4BEC-8FCB-3830419E8494
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiOTVkNDBmYS1hNzliLTQzYTMtOWUzOS0wMmJjNWJlOGI2NjQiLCJlbWFpbCI6ImtAZ21haWwuY29tIiwiZ2l2ZW5fbmFtZSI6ImtrayIsImZhbWlseV9uYW1lIjoiYWxleGFuZGVyIiwiQWN0aXZhdGUiOiJ0cnVlIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzU5MjI3NTM5LCJleHAiOjE3NTkyMjkzMzksImlhdCI6MTc1OTIyNzUzOSwiaXNzIjoiTG9jYWwiLCJhdWQiOiJMb2NhbCJ9.1Ay2YzIbEWo2hyWWQb2c60RvZ2t4eD5Kaoi07TDXzQM
+
+
+// //////////////////////////////////////////////////  CAR_PARTS
+
+###
+POST {{baseUrl}}/api/v1/parts
+Authorization: Bearer <your_token>
+Content-Type: multipart/form-data
+
+Form Data:
+Name=Brake Pad
+Description=High-performance ceramic brake pad
+StatusPart=new
+CountryPart=Germany
+Brand=Bosch
+ImageFile=[Upload one or more images]
+
+---
+
+### Update an Existing Part
+PUT {{baseUrl}}/api/v1/parts/4545-35354-353535-5334-3454
+Authorization: Bearer <your_token>
+Content-Type: multipart/form-data
+
+Form Data:
+Name=Brake Pad Pro
+Description=Updated ceramic brake pad
+StatusPart=Available
+CountryPart=Germany
+Brand=Bosch
+ImageFile=[Upload updated images]
+
+
+### Delete a Part
+DELETE {{baseUrl}}/api/v1/parts/4545-35354-353535-5334-3454
+Authorization: Bearer <your_token>
+
+
+
+### Get Random Parts
+GET {{baseUrl}}/api/v1/parts/random/5
+
+### Get All Parts (Paginated)
+GET {{baseUrl}}/api/v1/parts?page=1&pageSize=10
+
+### Get Parts by Status
+GET {{baseUrl}}/api/v1/parts/status/available
+
+### Get Parts by Brand
+GET {{baseUrl}}/api/v1/parts/brand/Bosch
+
+### Search Parts by Name
+GET {{baseUrl}}/api/v1/parts/search/brake

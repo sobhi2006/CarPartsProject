@@ -5,21 +5,34 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
-app.UseExceptionHandler();
-app.UseCors();
-app.UseRouting();
-app.UseHttpsRedirection();
-app.UseRateLimiter();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-app.UseStatusCodePages();
+else
+{
+    app.UseExceptionHandler();
+}
+
+app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseCors("AddMyFrontend");
+
+app.UseRateLimiter();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.UseResponseCompression();
-app.UseStaticFiles();
+
+app.UseStatusCodePages();
+
+app.UseStatusCodePages();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();

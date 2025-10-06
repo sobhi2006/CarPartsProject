@@ -17,10 +17,10 @@ else
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-
+app.UseCors();
 app.UseRouting();
 
-app.UseCors("AddMyFrontend");
+
 
 app.UseRateLimiter();
 

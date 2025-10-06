@@ -179,13 +179,20 @@ public static class Dependencies
     {
         service.AddCors(options =>
         {
-            options.AddPolicy("AddMyFrontend", policy =>
+            options.AddPolicy("any", p =>
             {
-                policy.WithOrigins("https://gleaming-taffy-45e668.netlify.app/");
-                policy.AllowAnyHeader();
-                policy.AllowAnyMethod();
-                policy.AllowCredentials();
+                p.AllowAnyOrigin();
+                p.AllowAnyHeader();
+                p.AllowAnyMethod();
+                p.AllowCredentials();
             });
+            // options.AddPolicy("AddMyFrontend", policy =>
+            // {
+            //     policy.WithOrigins("https://gleaming-taffy-45e668.netlify.app/");
+            //     policy.AllowAnyHeader();
+            //     policy.AllowAnyMethod();
+            //     policy.AllowCredentials();
+            // });
         });
         return service;
     }

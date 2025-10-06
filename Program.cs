@@ -13,23 +13,18 @@ else
 {
     app.UseExceptionHandler();
 }
-
+app.UseCors("any");
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
-app.UseCors("any");
+
 app.UseRouting();
-
-
-
 app.UseRateLimiter();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseResponseCompression();
-
-app.UseStatusCodePages();
 
 app.UseStatusCodePages();
 

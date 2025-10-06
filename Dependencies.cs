@@ -184,7 +184,7 @@ public static class Dependencies
                 p.AllowAnyOrigin();
                 p.AllowAnyHeader();
                 p.AllowAnyMethod();
-                p.AllowCredentials();
+                
             });
             // options.AddPolicy("AddMyFrontend", policy =>
             // {

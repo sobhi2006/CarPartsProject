@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  carparts-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./wwwroot:/app/wwwroot
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    restart: always

@@ -181,7 +181,7 @@ public static class Dependencies
         {
             options.AddPolicy("AddMyFrontend", policy =>
             {
-                policy.WithOrigins("https://al-ali-carss.netlify.app/");
+                policy.WithOrigins("https://gleaming-taffy-45e668.netlify.app/");
                 policy.AllowAnyHeader();
                 policy.AllowAnyMethod();
                 policy.AllowCredentials();

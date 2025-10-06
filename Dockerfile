@@ -27,4 +27,6 @@ RUN dotnet publish "./CarPartsProject.csproj" -c $BUILD_CONFIGURATION -o /app/pu
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+RUN mkdir -p /app/wwwroot/images && chmod -R 755 /app/wwwroot
 ENTRYPOINT ["dotnet", "CarPartsProject.dll"]
+
